@@ -14,8 +14,8 @@ public class Inventariogeneral {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        clsarticulo cArticulo = new clsarticulo();
-        farticulo.guardar
+        frmarticulo FArticulo = new frmarticulo();
+        FArticulo.setVisible(true);
         // TODO code application logic here
     }
     
