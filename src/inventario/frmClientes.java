@@ -44,6 +44,7 @@ public class frmClientes extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         lsdcliente = new javax.swing.JList<>();
         guardarcliente = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,6 +62,7 @@ public class frmClientes extends javax.swing.JFrame {
         jLabel6.setText("Busqueda de cliente:");
 
         buscarcliente.setText("Buscar");
+        buscarcliente.addActionListener(this::buscarclienteActionPerformed);
 
         lsdcliente.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -71,6 +73,8 @@ public class frmClientes extends javax.swing.JFrame {
 
         guardarcliente.setText("Guardar");
         guardarcliente.addActionListener(this::guardarclienteActionPerformed);
+
+        jButton1.setText("jButton1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,7 +111,8 @@ public class frmClientes extends javax.swing.JFrame {
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(busquedacliente, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buscarcliente)))
+                            .addComponent(buscarcliente)
+                            .addComponent(jButton1)))
                     .addComponent(jScrollPane1))
                 .addContainerGap(99, Short.MAX_VALUE))
         );
@@ -124,6 +129,8 @@ public class frmClientes extends javax.swing.JFrame {
                         .addGap(32, 32, 32))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(buscarcliente)
                         .addGap(18, 18, 18)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -152,9 +159,15 @@ public class frmClientes extends javax.swing.JFrame {
 
     private void guardarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarclienteActionPerformed
         // TODO add your handling code here:
-        clscliente = cCliente = new clscliente(nombre.getText(), razonsocial.getText(), tipodecliente.getText(), nombredecliente.getText() );
-        cCliente.guardar();
+        clscliente Ccliente = new clscliente(nombre.getText(), razonsocial.getText(), tipodecliente.getText(), nombredecliente.getText() );
+        Ccliente.guardar();
     }//GEN-LAST:event_guardarclienteActionPerformed
+
+    private void buscarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarclienteActionPerformed
+        // TODO add your handling code here:
+        clscliente Ccliente = new clscliente();
+        lsdcliente.setModel(Ccliente.llenarlista());
+    }//GEN-LAST:event_buscarclienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,6 +198,7 @@ public class frmClientes extends javax.swing.JFrame {
     private javax.swing.JToggleButton buscarcliente;
     private javax.swing.JTextField busquedacliente;
     private javax.swing.JButton guardarcliente;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

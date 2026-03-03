@@ -4,6 +4,9 @@
  */
 package inventario;
 
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author martin
@@ -40,11 +43,11 @@ public class clscliente {
         client.insertar(this.aTexto());
         System.out.println(this.aTexto());
     }
-    public DefaultListModell<String> llenarlista(){
+    public DefaultListModel<String> llenarlista(){
         mCliente client = new mCliente();
         ArrayList<String> datos = client.consultar();
         
-       DefaultListModell modelLista = new DefaultListModell<>();
+       DefaultListModel modelLista = new DefaultListModel<>();
        
        for (String registro: datos){
            modelLista.addElement(registro);
