@@ -51,7 +51,7 @@ public class frmClientes extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setText("clientes");
 
-        jLabel2.setText("Nombre:");
+        jLabel2.setText("ID:");
 
         jLabel3.setText("Razon social:");
 
@@ -114,7 +114,7 @@ public class frmClientes extends javax.swing.JFrame {
                             .addComponent(buscarcliente)
                             .addComponent(jButton1)))
                     .addComponent(jScrollPane1))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,7 +151,7 @@ public class frmClientes extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addComponent(guardarcliente))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(389, Short.MAX_VALUE))
         );
 
         pack();
