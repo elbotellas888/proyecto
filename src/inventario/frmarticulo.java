@@ -22,7 +22,8 @@ public class frmarticulo extends javax.swing.JFrame {
     public frmarticulo() {
         initComponents();
     }
-
+    //variable temporal para guardar los datosmtemporales del registro original
+    clsarticulo updatearticulo;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -188,6 +189,7 @@ public class frmarticulo extends javax.swing.JFrame {
         jLabel8.setText("Descripcion:");
 
         actualizar.setText("ACTUALIZAR");
+        actualizar.addActionListener(this::actualizarActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -282,13 +284,24 @@ public class frmarticulo extends javax.swing.JFrame {
             actualizardescripcion.setText(registroseleccionado);
             
             String[] datos = registroseleccionado.split("\\|");
-            actualizarcodigo.setText(datos[0].replace("codigo ", ""));
+            String codigo = (datos[0].replace("codigo ", ""));
+            String descripcion = (datos[1].replace("descripcion ", ""));
+            String precio = (datos[2].replace("precio ", ""));
             
-            actualizardescripcion.setText(datos[1].replace("descripcion ", ""));
+            actualizarcodigo.setText(codigo);
+            actualizardescripcion.setText (descripcion);
+            actualizarprecio.setText (precio);
             
-            actualizarprecio.setText(datos[2].replace("precio ", ""));
+            //llenamos el objeto con los valores originales//
+            updatearticulo = new clsarticulo (codigo, descripcion, Double.parseDouble(precio));
         }
     }//GEN-LAST:event_lsdarticuloValueChanged
+
+    private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+        // TODO add your handling code here:
+        updatearticulo.actualizar (actualizarcodigo.getText(),
+                actualizardescripcion.getText(), actualizarprecio.getText());
+    }//GEN-LAST:event_actualizarActionPerformed
 
     /**
      * @param args the command line arguments

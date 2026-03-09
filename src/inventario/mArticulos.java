@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -57,4 +58,48 @@ public class mArticulos {
         return listaRegistro;
     }
     
-}
+    public void update(String lineaactual, String lineanueva, String archivooriginal ){
+        
+        java.io.File fileoriginal = new java.io.File(archivooriginal);
+        java.io.File filetemporal = new java.io.File("temporal.txt");
+        
+        String linealeida;
+        Boolean actualizado = false;
+        
+        try(BufferedReader br = new BufferedReader(new FileReader(fileoriginal));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(filetemporal));){
+            
+            
+            
+            while((linealeida = br.readLine()) !=null){
+                if(linealeida.equals(lineaactual)){
+                    bw.write(lineanueva);
+                    actualizado = true;
+                }else {
+                    bw.write(linealeida);
+                }
+                bw.newLine();
+            }
+            
+        }catch(Exception e){
+            System.out.println("error al actualizar" + e.getMessage());
+            
+            
+        }
+        //eliminacion de archivo temporal 
+        if(actualizado){
+            if(fileoriginal.delete()){
+                filetemporal.renameTo(fileoriginal);
+                System.out.println("error: no se pudo borrar");
+            }
+        }else{
+            filetemporal.delete();
+            System.out.println("no se pudo encontrar el registro");
+                
+                
+            }
+            
+        }
+    }
+    
+
