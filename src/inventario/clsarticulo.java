@@ -34,6 +34,13 @@ public class clsarticulo {
         String articulo = this.codigo + "|" + this.descripcion + "|" + this.precio + "|";
         return articulo;
     }
+    
+    public String getDescripcion(){
+        return this.descripcion;
+    }
+    
+    
+    
         //guardar info
     public void guardar(){
         
@@ -65,7 +72,19 @@ public class clsarticulo {
         mArticulos mArticle = new mArticulos();
         mArticle.update(lineaoriginal, nuevalinea, "listado_articulos.txt");
     }
-            
+      
+    public void eliminar(){
+        
+        //registro a eliminar
+        
+        String lineaoriginal = this.codigo + "|" + this.descripcion + "|" + this.precio;
+        //imprimir nuevos valores
+        
+        System.out.println("valores origimales" + lineaoriginal);
+        //solicitar eliminacion del registro
+        mArticulos mArticle = new mArticulos();
+        mArticle.delete(lineaoriginal, "listado_articulos.txt");
+    }
 }
             
 

@@ -2,6 +2,7 @@ package inventario;
 
 
 import inventario.clsarticulo;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -57,6 +58,14 @@ public class frmarticulo extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         actualizarprecio = new javax.swing.JTextField();
         actualizar = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        eliminarcodigo = new javax.swing.JLabel();
+        eliminardescripcion = new javax.swing.JLabel();
+        eliminarprecio = new javax.swing.JLabel();
+        eliminar = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -176,7 +185,7 @@ public class frmarticulo extends javax.swing.JFrame {
                         .addComponent(jLabel6)))
                 .addGap(35, 35, 35)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -235,7 +244,60 @@ public class frmarticulo extends javax.swing.JFrame {
                     .addComponent(jLabel9))
                 .addGap(48, 48, 48)
                 .addComponent(actualizar)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Eliminar Articulo"));
+
+        jLabel10.setText("Codigo:");
+
+        jLabel11.setText("Descripcion:");
+
+        jLabel12.setText("Precio:");
+
+        eliminar.setText("ELIMINAR");
+        eliminar.addActionListener(this::eliminarActionPerformed);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(76, 76, 76)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(eliminarcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(eliminarprecio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                        .addComponent(eliminardescripcion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(eliminar)
+                .addGap(71, 71, 71))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(eliminarcodigo))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(eliminardescripcion))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(eliminarprecio))
+                .addGap(18, 18, 18)
+                .addComponent(eliminar)
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -246,8 +308,10 @@ public class frmarticulo extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1161, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(530, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,6 +322,8 @@ public class frmarticulo extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -284,13 +350,18 @@ public class frmarticulo extends javax.swing.JFrame {
             actualizardescripcion.setText(registroseleccionado);
             
             String[] datos = registroseleccionado.split("\\|");
-            String codigo = (datos[0].replace("codigo ", ""));
-            String descripcion = (datos[1].replace("descripcion ", ""));
-            String precio = (datos[2].replace("precio ", ""));
+            String codigo = (datos[0].replace("codigo", ""));
+            String descripcion = (datos[1].replace("descripcion", ""));
+            String precio = (datos[2].replace("precio", ""));
             
             actualizarcodigo.setText(codigo);
             actualizardescripcion.setText (descripcion);
             actualizarprecio.setText (precio);
+            
+            //llenar lbl de eliminar articulos
+            eliminarcodigo.setText(codigo);
+            eliminardescripcion.setText(descripcion);
+            eliminarprecio.setText(precio);
             
             //llenamos el objeto con los valores originales//
             updatearticulo = new clsarticulo (codigo, descripcion, Double.parseDouble(precio));
@@ -302,6 +373,19 @@ public class frmarticulo extends javax.swing.JFrame {
         updatearticulo.actualizar (actualizarcodigo.getText(),
                 actualizardescripcion.getText(), actualizarprecio.getText());
     }//GEN-LAST:event_actualizarActionPerformed
+
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+        // TODO add your handling code here:
+        int respuesta = JOptionPane.showConfirmDialog(this,
+                "¿estas seguro de que deseas eliminar l registro " +
+                        updatearticulo.getDescripcion()+"?",
+                "Eliminacion de articulos", 
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if (respuesta == JOptionPane.YES_OPTION){
+            updatearticulo.eliminar();
+        }
+    }//GEN-LAST:event_eliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -338,7 +422,14 @@ public class frmarticulo extends javax.swing.JFrame {
     private javax.swing.JTextField busqueda;
     private javax.swing.JTextField codigo;
     private javax.swing.JTextField descripcion;
+    private javax.swing.JToggleButton eliminar;
+    private javax.swing.JLabel eliminarcodigo;
+    private javax.swing.JLabel eliminardescripcion;
+    private javax.swing.JLabel eliminarprecio;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -350,6 +441,7 @@ public class frmarticulo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> lsdarticulo;
     private javax.swing.JTextField precio;
