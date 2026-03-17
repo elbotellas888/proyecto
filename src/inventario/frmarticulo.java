@@ -347,9 +347,13 @@ public class frmarticulo extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(!evt.getValueIsAdjusting()){
             String registroseleccionado = lsdarticulo.getSelectedValue();
-            actualizardescripcion.setText(registroseleccionado);
             
-            String[] datos = registroseleccionado.split("\\|");
+            if (registroseleccionado == null){
+                return;
+            }
+                String datos[] = registroseleccionado.split("\\|");
+                
+            
             String codigo = (datos[0].replace("codigo", ""));
             String descripcion = (datos[1].replace("descripcion", ""));
             String precio = (datos[2].replace("precio", ""));
@@ -370,8 +374,8 @@ public class frmarticulo extends javax.swing.JFrame {
 
     private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
         // TODO add your handling code here:
-        updatearticulo.actualizar (actualizarcodigo.getText(),
-                actualizardescripcion.getText(), actualizarprecio.getText());
+        updatearticulo.actualizar(actualizarcodigo.getText(), actualizardescripcion.getText(), actualizarprecio.getText());
+        
     }//GEN-LAST:event_actualizarActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed

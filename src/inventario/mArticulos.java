@@ -48,7 +48,7 @@ public class mArticulos {
             String linea;
             while ((linea = br.readLine()) != null){
                 String[] datos = linea.split("\\|");
-                String datoBonito = "codigo " + datos[0] + "| descripcion " + datos[1] + "| precio " + datos[2];
+                String datoBonito = "codigo" + datos[0] + "|descripcion" + datos[1] + "|precio" + datos[2];
                 listaRegistro.add(datoBonito);
             }
         }catch(IOException e){
@@ -66,19 +66,18 @@ public class mArticulos {
         String linealeida;
         Boolean actualizado = false;
         
-        try(BufferedReader br = new BufferedReader(new FileReader(fileoriginal));
-            BufferedWriter bw = new BufferedWriter(new FileWriter(filetemporal));){
-            
-            
-            
-            while((linealeida = br.readLine()) !=null){
+        try(BufferedReader br = new BufferedReader(new FileReader (fileoriginal));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(filetemporal));) {
+        
+            while((linealeida = br.readLine()) != null){
                 if(linealeida.equals(lineaactual)){
                     bw.write(lineanueva);
+                    bw.newLine(); // <-- ¡Faltaba esta línea!
                     actualizado = true;
-                }else {
+                } else {
                     bw.write(linealeida);
-                }
-                bw.newLine();
+                    bw.newLine();
+                }                
             }
             
         }catch(Exception e){
@@ -111,22 +110,18 @@ public class mArticulos {
         Boolean eliminado = false;
         
         try(BufferedReader br = new BufferedReader(new FileReader(fileoriginal));
-            BufferedWriter bw = new BufferedWriter(new FileWriter(filetemporal));){
-            
-            
-            
-            while((linealeida = br.readLine()) !=null){
+            BufferedWriter bw = new BufferedWriter(new FileWriter(filetemporal));) {
+        
+            while((linealeida = br.readLine()) != null){
                 if(linealeida.equals(lineaactual)){
-                    
                     eliminado = true;
-                }else {
+                } else {
                     bw.write(linealeida);
+                    bw.newLine(); // <-- ¡Mueve esta línea aquí adentro!
                 }
-                bw.newLine();
             }
             
         }catch(Exception e){
-            System.out.println("error al actualizar" + e.getMessage());
             
             
         }

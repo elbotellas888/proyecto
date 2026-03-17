@@ -31,7 +31,7 @@ public class clsarticulo {
     }
     //imprimir en consola los datos del articulo
     public String aTexto(){
-        String articulo = this.codigo + "|" + this.descripcion + "|" + this.precio + "|";
+        String articulo = this.codigo + "|" + this.descripcion + "|" + this.precio;
         return articulo;
     }
     
@@ -64,7 +64,7 @@ public class clsarticulo {
     
     public void actualizar(String newcodigo, String newdescripcion, String newprecio){
         String nuevalinea = newcodigo + "|" + newdescripcion + "|" + newprecio;
-        String lineaoriginal = this.codigo + "|" + this.descripcion + "|" + this.precio;
+        String lineaoriginal = this.codigo.trim() + "|" + this.descripcion.trim() + "|" + this.precio;
         //imprimir nuevos valores
         System.out.println("valores nuevos" + nuevalinea);
         System.out.println("valores origimales" + lineaoriginal);
