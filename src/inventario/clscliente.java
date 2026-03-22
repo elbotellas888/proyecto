@@ -56,6 +56,24 @@ public class clscliente {
        return modelLista;
     }
     
-            
+    public String getDescripcion(){
+    return this.nombre + " - " + this.nombredecliente;
+}
+    
+    public void actualizar(String nombre, String razonsocial, String tipodecliente, String nombredecliente){
+    
+    this.nombre = nombre;
+    this.razonsocial = razonsocial;
+    this.tipodecliente = tipodecliente;
+    this.nombredecliente = nombredecliente;
+    
+    mCliente client = new mCliente();
+    client.actualizar(this.aTexto());
+}
+    
+    public void eliminar(){
+    mCliente client = new mCliente();
+    client.eliminar(this.nombre);
+}
 }
     

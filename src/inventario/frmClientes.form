@@ -27,11 +27,6 @@
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="razonsocial" min="-2" pref="227" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabel2" min="-2" pref="80" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -39,11 +34,17 @@
                           <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" pref="126" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel4" min="-2" pref="88" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tipodecliente" min="-2" pref="227" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel4" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="tipodecliente" min="-2" pref="227" max="-2" attributes="0"/>
+                              <Component id="razonsocial" min="-2" pref="227" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -53,21 +54,24 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="nombredecliente" min="-2" pref="227" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="busquedacliente" min="-2" pref="222" max="-2" attributes="0"/>
-                          <Component id="buscarcliente" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="busquedacliente" min="-2" pref="222" max="-2" attributes="0"/>
+                              <Component id="buscarcliente" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
+                      <Component id="jScrollPane1" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="43" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -75,47 +79,52 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="buscarcliente" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="razonsocial" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="busquedacliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="buscarcliente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="razonsocial" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="busquedacliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tipodecliente" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tipodecliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="nombredecliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="guardarcliente" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane1" alignment="0" min="-2" pref="189" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jScrollPane1" min="-2" pref="189" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="389" max="32767" attributes="0"/>
+              <EmptySpace pref="144" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -191,6 +200,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="lsdclienteValueChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -205,10 +217,269 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guardarclienteActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton1"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="modificar"/>
+          </Border>
+        </Property>
       </Properties>
-    </Component>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel10" pref="120" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel7" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="modificarnombre" min="-2" pref="137" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="30" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Component id="modificarnombredecliente" alignment="1" min="-2" pref="101" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel8" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="jLabel9" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="modificarrazonsocial" pref="141" max="32767" attributes="0"/>
+                                  <Component id="modificartipodecliente" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="modificarnombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <Component id="modificarrazonsocial" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="modificartipodecliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="modificarnombredecliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="33" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Razon Social:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tipo de cliente:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nombre de Cliente:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="modificarnombre">
+        </Component>
+        <Component class="javax.swing.JTextField" name="modificarrazonsocial">
+        </Component>
+        <Component class="javax.swing.JTextField" name="modificartipodecliente">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modificartipodeclienteActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="modificarnombredecliente">
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Guardar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="ELIMINAR"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel11" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel13" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="27" pref="27" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                                  <Component id="eliminarnombre" min="-2" pref="75" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="eliminarrazonsocial" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="eliminartipodecliente" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel14" min="-2" pref="115" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="eliminarnombredecliente" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="eliminarnombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="eliminarrazonsocial" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="eliminartipodecliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="eliminarnombredecliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="66" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel12">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Razon social:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel13">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="tipo de cliente:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel14">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nombre de Cliente:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="eliminarnombre">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jLabel15"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="eliminarrazonsocial">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jLabel16"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="eliminartipodecliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jLabel17"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="eliminarnombredecliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jLabel18"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ELIMINAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

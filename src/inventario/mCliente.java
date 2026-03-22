@@ -35,22 +35,83 @@ public class mCliente {
         }
     }
     
-    public ArrayList <String> consultar(){
-        ArrayList <String> listaRegistro = new ArrayList<>();
-        
-        try(BufferedReader br = new BufferedReader (new FileReader("listado_clientes.txt"))){
-            String linea;
-            while ((linea = br.readLine()) != null){
-                String[] datos = linea.split("\\|");
-                String datoBonito = "nombre: " + datos[0] + " razonsocial: " + datos[1] + "tipodecliente: " + datos[2] + "nombredecliente: " + datos[3];
-                listaRegistro.add(datoBonito);
-            }
-        }catch(IOException e){
-            System.out.println("mensaje de error" + e.getMessage());
-            listaRegistro.add("error");  
+    public ArrayList<String> consultar(){
+    ArrayList<String> listaRegistro = new ArrayList<>();
+    
+    try(BufferedReader br = new BufferedReader (new FileReader("listado_clientes.txt"))){
+        String linea;
+        while ((linea = br.readLine()) != null){
+            listaRegistro.add(linea); // formato original
         }
-        return listaRegistro;
+    }catch(IOException e){
+        System.out.println("mensaje de error" + e.getMessage());
+        listaRegistro.add("error");  
     }
+    return listaRegistro;
+}
+    
+    public void actualizar(String cadenaActualizada){
+    ArrayList<String> registros = new ArrayList<>();
+    
+    try (BufferedReader br = new BufferedReader(new FileReader("listado_clientes.txt"))){
+        String linea;
+        
+        while ((linea = br.readLine()) != null){
+            String[] datos = linea.split("\\|");
+            String[] nuevosDatos = cadenaActualizada.split("\\|");
+            
+            // Comparamos por ID (nombre)
+            if (datos[0].equals(nuevosDatos[0])){
+                registros.add(cadenaActualizada); // reemplaza
+            } else {
+                registros.add(linea); // deja igual
+            }
+        }
+        
+    } catch (IOException e){
+        System.out.println("Error al leer: " + e.getMessage());
+    }
+    
+    // Sobrescribir archivo
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter("listado_clientes.txt"))){
+        for (String registro : registros){
+            bw.write(registro);
+            bw.newLine();
+        }
+    } catch (IOException e){
+        System.out.println("Error al escribir: " + e.getMessage());
+    }
+}
+    
+    public void eliminar(String id){
+    ArrayList<String> registros = new ArrayList<>();
+    
+    try (BufferedReader br = new BufferedReader(new FileReader("listado_clientes.txt"))){
+        String linea;
+        
+        while ((linea = br.readLine()) != null){
+            String[] datos = linea.split("\\|");
+            
+            // Si NO coincide, lo guardamos
+            if (!datos[0].equals(id)){
+                registros.add(linea);
+            }
+        }
+        
+    } catch (IOException e){
+        System.out.println("Error al leer: " + e.getMessage());
+    }
+    
+    // Reescribir archivo sin el eliminado
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter("listado_clientes.txt"))){
+        for (String registro : registros){
+            bw.write(registro);
+            bw.newLine();
+        }
+    } catch (IOException e){
+        System.out.println("Error al escribir: " + e.getMessage());
+    }
+}
     
 }
 
