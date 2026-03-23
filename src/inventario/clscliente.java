@@ -32,7 +32,7 @@ public class clscliente {
     }
     //imprimir en consola los datos del articulo
     public String aTexto(){
-        String cliente = this.nombre + "|" + this.razonsocial + "|" + this.tipodecliente + "|" + this.nombredecliente + "|";
+        String cliente = this.nombre + "|" + this.razonsocial + "|" + this.tipodecliente + "|" + this.nombredecliente;
         return cliente;
     }
         //guardar info

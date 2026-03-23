@@ -371,8 +371,16 @@ public class frmClientes extends javax.swing.JFrame {
         modificarrazonsocial.setText(razonsocial);
         modificartipodecliente.setText(tipodecliente);
         modificarnombredecliente.setText(nombredecliente);
+        
+        eliminarnombre.setText(nombre);
+        eliminarrazonsocial.setText(razonsocial);
+        eliminartipodecliente.setText(tipodecliente);
+        eliminarnombredecliente.setText(nombredecliente);
+        
 
         updatecliente = new clscliente(nombre, razonsocial, tipodecliente, nombredecliente);
+        
+
     }
     }//GEN-LAST:event_lsdclienteValueChanged
 
@@ -407,6 +415,8 @@ public class frmClientes extends javax.swing.JFrame {
         modificartipodecliente.getText(),
         modificarnombredecliente.getText()
     );
+           
+
         
     }//GEN-LAST:event_jButton2ActionPerformed
 

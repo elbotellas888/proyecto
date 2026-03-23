@@ -53,6 +53,7 @@ public class mCliente {
     public void actualizar(String cadenaActualizada){
     ArrayList<String> registros = new ArrayList<>();
     
+    
     try (BufferedReader br = new BufferedReader(new FileReader("listado_clientes.txt"))){
         String linea;
         
