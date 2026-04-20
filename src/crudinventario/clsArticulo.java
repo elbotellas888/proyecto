@@ -50,6 +50,7 @@ public class clsArticulo {
         // Si quieres verlo en consola una sola vez:
         System.out.println(textoArticulo);
     }
+    
     public DefaultListModel<String> llenarLista(){
         mArticulo MArticle = new mArticulo();
         

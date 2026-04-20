@@ -347,8 +347,6 @@ public class frmArticulo extends javax.swing.JFrame {
 
     private void jmiImportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiImportarActionPerformed
         // Vamos a tener la logica de la informacion
-        int respuesta = JOptionPane.showConfirmDialog(this,"es importante que el archivo a importar tenga el nombre inventario.csv debe estar en la raiz del proyecto"
-               , "proceso de importacion por csv" , JOptionPane.YES_NO_OPTION , JOptionPane.QUESTION_MESSAGE);
          
     }//GEN-LAST:event_jmiImportarActionPerformed
 

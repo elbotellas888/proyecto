@@ -5,12 +5,19 @@
             <url>src/crudinventario/frmArticulo.java</url>
             <bookmark id="1">
                 <name/>
-                <line>359</line>
+                <line>361</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/martin/Documents/NetBeansProjects/CRUDInventario-Java-master/src/inventario/frmain.java</file>
+            <file>file:/C:/Users/martin/Documents/NetBeansProjects/CRUDInventario-Java-master/src/crudinventario/frmArticulo.java</file>
+            <file>file:/C:/Users/martin/Documents/NetBeansProjects/CRUDInventario-Java-master/src/crudinventario/clscsv.java</file>
+            <file>file:/C:/Users/martin/Documents/NetBeansProjects/CRUDInventario-Java-master/src/crudinventario/mArticulo.java</file>
+            <file>file:/C:/Users/martin/Documents/NetBeansProjects/CRUDInventario-Java-master/src/crudinventario/clsArticulo.java</file>
+            <file>file:/C:/Users/martin/Documents/NetBeansProjects/CRUDInventario-Java-master/src/crudinventario/frmClientes.java</file>
+        </group>
     </open-files>
 </project-private>
