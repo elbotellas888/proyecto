@@ -1,17 +1,10 @@
-1234|Atun|22
-32432|Frijoles|56.0
-FER-004|Pinzas de Presion 10in|150.0
-FER-005|Desarmador Cruz 1/4x4|45.5
-ELE-003|Cable Calibre 12 AWG 100m|1200.0
-ELE-004|Foco LED 12W|30.0
-PLM-001|Cinta Teflon 1/2in|15.0
-PLM-002|Llave de Paso Cobre 3/4|85.0
-FER-004|Pinzas de Presion 10in|150.0
-FER-005|Desarmador Cruz 1/4x4|45.5
-ELE-003|Cable Calibre 12 AWG 100m|1200.0
-ELE-004|Foco LED 12W|30.0
-PLM-001|Cinta Teflon 1/2in|15.0
-PLM-002|Llave de Paso Cobre 3/4|85.0
+1223|jorge|10000.0
+234|A-520 M|1299.0
+654|RYZEN 5 5500|2500.0
+532|RAM DDRTRES SODIMM OCHOGB|300.0
+1167|CORE I5 4TH|800.0
+941|SSD SATA 256GB TOPESEL|800.0
+723|PENTIUM G 6900 9TH|2000.0
 FER-004|Pinzas de Presion 10in|150.0
 FER-005|Desarmador Cruz 1/4x4|45.5
 ELE-003|Cable Calibre 12 AWG 100m|1200.0

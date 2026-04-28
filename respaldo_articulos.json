@@ -1,102 +1,37 @@
 [
   {
-    "codigo": "1234",
-    "descripcion": "Atun",
-    "precio": 22.0
+    "codigo": "1223",
+    "descripcion": "jorge",
+    "precio": 10000.0
   },
   {
-    "codigo": "32432",
-    "descripcion": "Frijoles",
-    "precio": 56.0
+    "codigo": "234",
+    "descripcion": "A-520 M",
+    "precio": 1299.0
   },
   {
-    "codigo": "FER-004",
-    "descripcion": "Pinzas de Presion 10in",
-    "precio": 150.0
+    "codigo": "654",
+    "descripcion": "RYZEN 5 5500",
+    "precio": 2500.0
   },
   {
-    "codigo": "FER-005",
-    "descripcion": "Desarmador Cruz 1/4x4",
-    "precio": 45.5
+    "codigo": "532",
+    "descripcion": "RAM DDRTRES SODIMM OCHOGB",
+    "precio": 300.0
   },
   {
-    "codigo": "ELE-003",
-    "descripcion": "Cable Calibre 12 AWG 100m",
-    "precio": 1200.0
+    "codigo": "1167",
+    "descripcion": "CORE I5 4TH",
+    "precio": 800.0
   },
   {
-    "codigo": "ELE-004",
-    "descripcion": "Foco LED 12W",
-    "precio": 30.0
+    "codigo": "941",
+    "descripcion": "SSD SATA 256GB TOPESEL",
+    "precio": 800.0
   },
   {
-    "codigo": "PLM-001",
-    "descripcion": "Cinta Teflon 1/2in",
-    "precio": 15.0
-  },
-  {
-    "codigo": "PLM-002",
-    "descripcion": "Llave de Paso Cobre 3/4",
-    "precio": 85.0
-  },
-  {
-    "codigo": "FER-004",
-    "descripcion": "Pinzas de Presion 10in",
-    "precio": 150.0
-  },
-  {
-    "codigo": "FER-005",
-    "descripcion": "Desarmador Cruz 1/4x4",
-    "precio": 45.5
-  },
-  {
-    "codigo": "ELE-003",
-    "descripcion": "Cable Calibre 12 AWG 100m",
-    "precio": 1200.0
-  },
-  {
-    "codigo": "ELE-004",
-    "descripcion": "Foco LED 12W",
-    "precio": 30.0
-  },
-  {
-    "codigo": "PLM-001",
-    "descripcion": "Cinta Teflon 1/2in",
-    "precio": 15.0
-  },
-  {
-    "codigo": "PLM-002",
-    "descripcion": "Llave de Paso Cobre 3/4",
-    "precio": 85.0
-  },
-  {
-    "codigo": "FER-004",
-    "descripcion": "Pinzas de Presion 10in",
-    "precio": 150.0
-  },
-  {
-    "codigo": "FER-005",
-    "descripcion": "Desarmador Cruz 1/4x4",
-    "precio": 45.5
-  },
-  {
-    "codigo": "ELE-003",
-    "descripcion": "Cable Calibre 12 AWG 100m",
-    "precio": 1200.0
-  },
-  {
-    "codigo": "ELE-004",
-    "descripcion": "Foco LED 12W",
-    "precio": 30.0
-  },
-  {
-    "codigo": "PLM-001",
-    "descripcion": "Cinta Teflon 1/2in",
-    "precio": 15.0
-  },
-  {
-    "codigo": "PLM-002",
-    "descripcion": "Llave de Paso Cobre 3/4",
-    "precio": 85.0
+    "codigo": "723",
+    "descripcion": "PENTIUM G 6900 9TH",
+    "precio": 2000.0
   }
 ]
