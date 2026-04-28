@@ -6,6 +6,15 @@ package crudinventario;
 
 import java.util.Set;
 import javax.swing.JOptionPane;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -70,6 +79,7 @@ public class frmArticulo extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jmiImportar = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jmiExportar = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -300,9 +310,13 @@ public class frmArticulo extends javax.swing.JFrame {
         jmiImportar.setText("Importar ");
         jmiImportar.addActionListener(this::jmiImportarActionPerformed);
 
-        jMenuItem1.setText("Importar");
+        jMenuItem1.setText("Importar (CSV)");
         jMenuItem1.addActionListener(this::jMenuItem1ActionPerformed);
         jmiImportar.add(jMenuItem1);
+
+        jmiExportar.setText("Exportar (JSON)");
+        jmiExportar.addActionListener(this::jmiExportarActionPerformed);
+        jmiImportar.add(jmiExportar);
 
         jMenuBar1.add(jmiImportar);
 
@@ -363,6 +377,58 @@ public class frmArticulo extends javax.swing.JFrame {
         }
        
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jmiExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiExportarActionPerformed
+        // TODO add your handling code here:
+        try {
+        // 1. Preparamos una lista (La "caja") para guardar todos los artículos temporalmente en RAM
+        List<clsArticulo> listaArticulos = new ArrayList<>();
+       
+        // 2. Abrimos el archivo de texto plano para lectura
+        BufferedReader br = new BufferedReader(new FileReader("listado_articulos.txt"));
+        String linea;
+       
+        // 3. Recorremos el archivo secuencial línea por línea
+        while ((linea = br.readLine()) != null) {
+            String[] datos = linea.split("\\|");
+           
+            // Verificamos que la línea tenga las 3 partes para evitar errores
+            if (datos.length >= 3) {
+                // Parseamos el precio a double
+                double precioParseado = Double.parseDouble(datos[2]);
+               
+                // Creamos el objeto y lo metemos a la lista
+                clsArticulo nuevoArticulo = new clsArticulo(datos[0], datos[1], precioParseado);
+                listaArticulos.add(nuevoArticulo);
+            }
+        }
+        br.close(); // Siempre cerrar el flujo de lectura
+       
+        // ==========================================
+        // 4. LA MAGIA DE GSON (Serialización Masiva)
+        // ==========================================
+       
+        // TIP DE INGENIERÍA: En lugar de usar 'new Gson()', usamos GsonBuilder
+        // con 'setPrettyPrinting' para que el archivo salga formateado con tabulaciones
+        // y saltos de línea (ideal para que los alumnos lo puedan leer fácil).
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+       
+        // Convertimos TODA la lista a un solo String con formato JSON
+        String jsonFinal = gson.toJson(listaArticulos);
+       
+        // 5. Guardamos el String gigante en un archivo nuevo .json
+        BufferedWriter bw = new BufferedWriter(new FileWriter("respaldo_articulos.json"));
+        bw.write(jsonFinal);
+        bw.close();
+       
+        JOptionPane.showMessageDialog(this, "¡Exportación masiva a JSON exitosa!");
+       
+    } catch (Exception e) {
+        System.out.println(" Error durante la exportación a JSON: " + e.getMessage());
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+        
+    }//GEN-LAST:event_jmiExportarActionPerformed
 
     private void txtCodigo1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtCodigo1ActionPerformed
         // TODO add your handling code here:
@@ -494,6 +560,7 @@ public class frmArticulo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JMenuItem jmiExportar;
     private javax.swing.JMenu jmiImportar;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblDescripcion;
