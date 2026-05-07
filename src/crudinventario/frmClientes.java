@@ -4,6 +4,21 @@
  */
 package crudinventario;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jorgec
@@ -70,6 +85,12 @@ public class frmClientes extends javax.swing.JFrame {
         lblTipo = new javax.swing.JLabel();
         lblRazon = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jmImportar = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -170,7 +191,7 @@ public class frmClientes extends javax.swing.JFrame {
                     .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -310,6 +331,25 @@ public class frmClientes extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jmImportar.setText("importar");
+
+        jMenuItem1.setText("importar CSV");
+        jMenuItem1.addActionListener(this::jMenuItem1ActionPerformed);
+        jmImportar.add(jMenuItem1);
+
+        jMenuItem2.setText("exportar PDF");
+        jmImportar.add(jMenuItem2);
+
+        jMenuItem3.setText("exportar JSON");
+        jmImportar.add(jMenuItem3);
+
+        jMenuBar1.add(jmImportar);
+
+        jMenu2.setText("informacion");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -346,6 +386,7 @@ public class frmClientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTipoCliente1ActionPerformed
 
+    
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         if (updateCliente != null) {
             updateCliente.actualizar(txtNoCliente1.getText(), txtNombre1.getText(),
@@ -369,6 +410,19 @@ public class frmClientes extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+                // TODO add your handling code here:
+        int respuesta = JOptionPane.showConfirmDialog(this, 
+                "Es importante que el archivo a importar tenga el nombre "+
+                    "clientes.csv y se encuentre en la raiz del proyecto",
+                "Importacion de datos desde archivo.csv",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if(respuesta == JOptionPane.YES_OPTION){
+            clscsv cCsv = new clscsv();
+            cCsv.importarDatos2();
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void lstClientesValueChanged(javax.swing.event.ListSelectionEvent evt) {
         if (!evt.getValueIsAdjusting()) {
@@ -467,11 +521,17 @@ public class frmClientes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenu jmImportar;
     private javax.swing.JLabel lblCliente;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblRazon;
