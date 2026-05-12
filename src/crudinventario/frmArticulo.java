@@ -20,6 +20,18 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileOutputStream;
+import java.io.File;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartUtils;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
 
 /**
  *
@@ -441,74 +453,116 @@ public class frmArticulo extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiExportarActionPerformed
 
     private void jmiExportarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiExportarPDFActionPerformed
-        // TODO add your handling code here:
+
+        // ── Fuentes ─────────────────────────────────────────────────────────
+        Font fuenteTitulo    = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 16, BaseColor.BLACK);
+        Font fuenteSubtitulo = FontFactory.getFont(FontFactory.HELVETICA,      11, BaseColor.DARK_GRAY);
+        Font fuenteCabecera  = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 11, BaseColor.WHITE);
+
         Document documento = new Document();
 
         try {
-        // 2. Preparamos el escritor para guardar el archivo en el disco duro
-        PdfWriter.getInstance(documento, new FileOutputStream("Reporte_Inventario.pdf"));
-       
-        // 3. Abrimos el documento para empezar a escribirle
-        documento.open();
-       
-        // 4. Agregamos un Título
-        documento.add(new Paragraph("Reporte Gerencial de Inventario - Taller 360"));
-        documento.add(new Paragraph(" ")); // Un salto de línea para dar espacio
+            // Preparamos el escritor
+            PdfWriter.getInstance(documento, new FileOutputStream("Reporte_Inventario.pdf"));
+            documento.open();
 
-        // 5. Creamos la estructura tabular (3 columnas)
-        PdfPTable tabla = new PdfPTable(4);
-       
-        // 6. Agregamos los encabezados de la tabla
-        tabla.addCell("CÓDIGO");
-        tabla.addCell("DESCRIPCIÓN");
-        tabla.addCell("PRECIO ($)");
-        tabla.addCell("DISPONIBILIDAD");
+            // Título del reporte
+            documento.add(new Paragraph("Reporte Gerencial de Inventario - Taller 360", fuenteTitulo));
+            documento.add(new Paragraph(" "));
 
-        // =======================================================
-        // 7. AQUÍ VA EL CICLO DONDE LEEN SUS DATOS
-        // (Esto es solo una simulación manual para el ejemplo)
-        // En la práctica real, aquí harían el recorrido de su JList
-        // o leerían su archivo .txt línea por línea.
-        // =======================================================
-       
-        BufferedReader br = new BufferedReader(new FileReader("listado_articulos.txt"));
-        String linea;
-        double total = 0;
-        while ((linea = br.readLine()) != null) {
+            // ── PASO 2: Contadores ANTES del ciclo ──────────────────────────
+            int articulosEconomicos = 0;
+            int articulosPremium    = 0;
+
+            // Tabla con 4 columnas
+            PdfPTable tabla = new PdfPTable(4);
+            tabla.setWidthPercentage(100);
+
+            // Encabezados con color de fondo
+            for (String encabezado : new String[]{"CÓDIGO", "DESCRIPCIÓN", "PRECIO ($)", "DISPONIBILIDAD"}) {
+                PdfPCell celda = new PdfPCell(new Phrase(encabezado, fuenteCabecera));
+                celda.setBackgroundColor(new BaseColor(60, 60, 60));
+                celda.setHorizontalAlignment(Element.ALIGN_CENTER);
+                celda.setPadding(5);
+                tabla.addCell(celda);
+            }
+
+            // ── PASO 2: Ciclo de lectura con lógica condicional de precio ───
+            BufferedReader br = new BufferedReader(new FileReader("listado_articulos.txt"));
+            String linea;
+            double total = 0;
+
+            while ((linea = br.readLine()) != null) {
                 String[] datos = linea.split("\\|");
 
                 if (datos.length >= 3) {
-                    tabla.addCell(datos[0]); // Código
-                    tabla.addCell(datos[1]); // Descripción
-                    double precio = Double.parseDouble(datos[2]);
+                    double precio = Double.parseDouble(datos[2].trim());
                     total += precio;
-                    tabla.addCell(String.valueOf(precio));
-                    
-                    
-                    
-                String disponibilidad = (Math.random() < 0.5) ? "Disponible" : "No disponible";
-                tabla.addCell(disponibilidad);
-                    
-                    
+
+                    // Contar artículos por rango de precio
+                    if (precio <= 500.0) {
+                        articulosEconomicos++;   // Económico: precio ≤ $500
+                    } else {
+                        articulosPremium++;      // Premium:   precio  > $500
+                    }
+
+                    tabla.addCell(datos[0].trim());
+                    tabla.addCell(datos[1].trim());
+                    tabla.addCell(String.format("$%.2f", precio));
+
+                    String disponibilidad = (Math.random() < 0.5) ? "Disponible" : "No disponible";
+                    tabla.addCell(disponibilidad);
                 }
             }
+            br.close();
 
-        br.close();
+            // 8. Inyectamos la tabla en el documento
+            documento.add(tabla);
+            documento.add(new Paragraph(" "));
+            documento.add(new Paragraph("TOTAL INVENTARIO: $" + String.format("%.2f", total), fuenteSubtitulo));
+            documento.add(new Paragraph(" "));
 
-        // 8. Inyectamos la tabla terminada dentro del documento PDF
-        documento.add(tabla);
-        documento.add(new Paragraph(" "));
-        documento.add(new Paragraph("TOTAL INVENTARIO: $" + total));
+            // ── PASO 3: Construir el PieChart con los contadores calculados ─
+            DefaultPieDataset dataset = new DefaultPieDataset();
+            dataset.setValue("Económicos (<= $500)", articulosEconomicos);
+            dataset.setValue("Premium (> $500)",     articulosPremium);
 
-        // 9. Cerramos el documento (¡Importantísimo para que se guarde el archivo!)
-        documento.close();
-       
-        // Mensaje de éxito para el usuario
-        javax.swing.JOptionPane.showMessageDialog(this, "¡PDF generado con éxito en la carpeta del proyecto!");
+            JFreeChart grafica = ChartFactory.createPieChart(
+                "Análisis de Precios de Inventario",
+                dataset,
+                true,   // leyenda
+                true,   // tooltips
+                false   // URLs
+            );
 
-    } catch (Exception e) {
-        System.out.println("Error al generar el PDF: " + e.getMessage());
-    }
+            // ── PASO 3c: Guardar PNG temporal ────────────────────────────────
+            File archivoTemporal = new File("grafica_temp.png");
+            ChartUtils.saveChartAsPNG(archivoTemporal, grafica, 500, 300);
+
+            // ── PASO 4: Inyectar imagen en el PDF ────────────────────────────
+            documento.add(new Paragraph("Análisis Visual de Precios:", fuenteSubtitulo));
+            documento.add(new Paragraph(" "));
+
+            Image imagenGrafica = Image.getInstance("grafica_temp.png");
+            imagenGrafica.scaleToFit(450, 270);
+            imagenGrafica.setAlignment(Element.ALIGN_CENTER);
+            documento.add(imagenGrafica);
+
+            documento.add(new Paragraph(" "));
+            documento.add(new Paragraph(
+                "Artículos Económicos (≤ $500): " + articulosEconomicos +
+                "   |   Artículos Premium (> $500): " + articulosPremium,
+                fuenteSubtitulo));
+
+            // 9. Cerrar documento
+            documento.close();
+
+            javax.swing.JOptionPane.showMessageDialog(this, "¡PDF generado con éxito en la carpeta del proyecto!");
+
+        } catch (Exception e) {
+            System.out.println("Error al generar el PDF: " + e.getMessage());
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_jmiExportarPDFActionPerformed
 
     private void txtCodigo1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtCodigo1ActionPerformed
